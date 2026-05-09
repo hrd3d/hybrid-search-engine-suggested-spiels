@@ -153,7 +153,7 @@ Request to Return
 
 THE CASE TRACKER
 CX ask how to find the case tracker
-•Via help center:
+Via help center
 •In the Shopee app, go to the Me tab > Help Centre > Case Tracker (bottom section) to view the Case Tracker..
 •Via notification page:
 •Go to the Notification page > Tap Shopee Updates

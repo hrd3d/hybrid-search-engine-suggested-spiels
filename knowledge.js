@@ -103,7 +103,6 @@ Order SN:
 Reason: 
 Detailed Concern: (Please prioritize team)
 Choose here the expedite delivery Reason:
-
 •Before EDD with no movement for 3-7 days
 •Before EDD with no movement for 8 days or more
 •Before EDD at LM hub with valid reason 
@@ -116,7 +115,8 @@ Choose here the expedite delivery Reason:
 •Out for delivery beyond 8PM
 •Misrouted order status updates
 
-FOR SR COMPENSATION VOUCHER (create a task) LEAVE THE CASE ONHOLD
+FOR SR COMPENSATION VOUCHER
+Task creation and leave the case "ONHOLD"
 Task Subject: Team Lead - SR Compensation 
 Related Party Owner: zbragt76@shopeemobile-external.com
 •Task Content: 
@@ -128,15 +128,15 @@ Related Party Owner: zbragt76@shopeemobile-external.com
 •Detailed summary of the customer's concern:
 
 SR COMPENSATION 
-Spiel for SR Compensation
+Suggested spiel:
 •As a token of apology, we can process the 50 pesos compensation voucher for the inconvenience.
 I completely understand how this is, especially since it wasn’t your fault. I truly understand where you’re coming from. While I know the ₱50 voucher cannot fully make up for the inconvenience, it’s meant as a small token of apology.
 •We've requested a voucher to be added to your Shopee account within 48-72 hours. Once approved, you can easily find the details in the 'Me' tab of your Shopee app under 'My Vouchers.'
 
 RIDER REPORT SPX
 Rider report SPX only
-•Run Macro: Wrong on hold/Fake delivery attempt
-•Details of the complaint raised: The customer was not contacted by the rider yet the order was tagged as failed •delivery due to —
+Run Macro: Wrong on hold/Fake delivery attempt
+•Details of the complaint raised: The customer was not contacted by the rider yet the order was tagged as failed delivery due to —
 
 RIDER REPORT OTHER 3PL
 Rider report other 3PL

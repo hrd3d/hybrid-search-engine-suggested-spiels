@@ -765,70 +765,80 @@ function setupSearch(inputId, dropdownId, type){
     const input = document.getElementById(inputId);
     const dropdown = document.getElementById(dropdownId);
 
-    input.addEventListener('input',()=>{
+function renderDropdown(){
 
-        const value = input.value.trim().toLowerCase();
+    const value = input.value.trim().toLowerCase();
 
-        dropdown.innerHTML = '';
+    dropdown.innerHTML = '';
 
-        if(value.length < 3){
-            dropdown.style.display = 'none';
-            return;
+    if(value.length < 3){
+        dropdown.style.display = 'none';
+        return;
+    }
+
+    let matched = sections.filter(section=>{
+
+        if(type === 'category'){
+            return section.title.toLowerCase().includes(value);
+        }else{
+            return section.search.includes(value);
         }
-
-        let matched = sections.filter(section=>{
-
-            if(type === 'category'){
-                return section.title.toLowerCase().includes(value);
-            }else{
-                return section.search.includes(value);
-            }
-
-        });
-
-        if(!matched.length){
-            dropdown.style.display = 'none';
-            return;
-        }
-
-        matched.slice(0,15).forEach(section=>{
-
-            const item = document.createElement('div');
-
-            item.className = 'dropdown-item';
-
-            item.innerHTML = `
-                <strong>${section.title}</strong>
-            `;
-
-            item.onclick = ()=>{
-
-                dropdown.style.display = 'none';
-
-const target = document.getElementById(
-    'section-' + section.id
-);
-
-target.scrollIntoView({
-    behavior:'smooth',
-    block:'center'
-});
-
-target.classList.remove('highlight-pop');
-
-void target.offsetWidth;
-
-target.classList.add('highlight-pop');
-
-            };
-
-            dropdown.appendChild(item);
-
-        });
-
-        dropdown.style.display = 'block';
 
     });
+
+    if(!matched.length){
+        dropdown.style.display = 'none';
+        return;
+    }
+
+    matched.slice(0,15).forEach(section=>{
+
+        const item = document.createElement('div');
+
+        item.className = 'dropdown-item';
+
+        item.innerHTML = `
+            <strong>${section.title}</strong>
+        `;
+
+        item.onclick = ()=>{
+
+            dropdown.style.display = 'none';
+
+            const target = document.getElementById(
+                'section-' + section.id
+            );
+
+            target.scrollIntoView({
+                behavior:'smooth',
+                block:'center'
+            });
+
+            target.classList.remove('highlight-pop');
+
+            void target.offsetWidth;
+
+            target.classList.add('highlight-pop');
+
+        };
+
+        dropdown.appendChild(item);
+
+    });
+
+    dropdown.style.display = 'block';
+
+}
+
+input.addEventListener('input', renderDropdown);
+
+input.addEventListener('focus',()=>{
+
+    if(input.value.trim().length >= 3){
+        renderDropdown();
+    }
+
+});
 
     document.addEventListener('click',(e)=>{
 

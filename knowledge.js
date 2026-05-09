@@ -59,7 +59,7 @@ Place the case on Hold Case Status
 
 TRANSFER SPIEL TO THE RIGHT DEPARTMENT
 Suggested spiel:
-I understand that your concern is about —. For further assistance po, I will transfer you to our assigned team. 
+I understand that your concern is about ______. For further assistance po, I will transfer you to our assigned team. 
 
 DISCONNECT
 Suggested spiel:
@@ -140,7 +140,7 @@ Run Macro: Wrong on hold/Fake delivery attempt
 
 RIDER REPORT OTHER 3PL
 Rider report other 3PL
-•Run Macro: Logistics - Rider Behavior (Other 3PLs)
+Run Macro: Logistics - Rider Behavior (Other 3PLs)
 •Last Mile Tracking Number: #{Shipping ID}
 •Additional info: The customer was not contacted by the rider yet the order was tagged as failed delivery due to —
 •Deadline: +3days

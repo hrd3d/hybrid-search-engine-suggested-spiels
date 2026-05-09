@@ -367,6 +367,47 @@ body::after{
     letter-spacing:.5px;
 }
 
+.spiel-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.spiel-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:2px;
+}
+
+.mini-copy-btn{
+    border:none;
+    background:linear-gradient(
+        135deg,
+        #ff5b1f,
+        #ff7a00
+    );
+
+    color:white;
+    padding:6px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:700;
+    flex-shrink:0;
+
+    transition:.2s;
+}
+
+.mini-copy-btn:hover{
+    transform:scale(1.05);
+}
+
+.spiel-text{
+    flex:1;
+    line-height:1.7;
+}
+
 </style>
 </head>
 
@@ -597,6 +638,7 @@ text = text
 
     return text;
 }
+
 function renderCard(section){
 
     const div = document.createElement('div');
@@ -604,40 +646,82 @@ function renderCard(section){
     div.className = 'card';
     div.id = 'section-' + section.id;
 
-const cleanedContent = section.content
-    .replace(section.title,'')
-    .replace(/^\s+/,'')
-    .trim();
+    const hasContent =
+        section.content &&
+        section.content.trim().length > 0;
 
-const hasContent =
-    section.content &&
-    section.content.trim().length > 0;
+    const isSuggestedSpiel =
+        section.subTitle &&
+        section.subTitle.toLowerCase()
+        .includes('suggested spiel');
+
+    const bulletItems = section.content
+        .split('•')
+        .map(x=>x.trim())
+        .filter(x=>x);
 
     div.innerHTML = `
+
         <div class="section-tag">CATEGORY</div>
 
-<div class="category-title">
-    ${section.title}
-</div>
+        <div class="category-title">
+            ${section.title}
+        </div>
 
-<div class="sub-category">
-    ${section.subTitle || ''}
-</div>
+        <div class="sub-category">
+            ${section.subTitle || ''}
+        </div>
 
-<div class="content">
-    ${convertLinks(section.content, section.title)}
-</div>
+        <div class="content">
 
-${hasContent ? `
-    <button class="copy-btn"
-    onclick="copyText(${section.id})">
-        Copy Content
-    </button>
-` : ''}
+            ${isSuggestedSpiel ? `
+
+                <div class="spiel-list">
+
+                    ${bulletItems.map(item=>`
+
+                        <div class="spiel-item">
+
+                            <button
+                            class="mini-copy-btn"
+                            onclick="copyBullet(this, \`${item.replace(/`/g,'\\`')}\`)">
+
+                                Copy
+
+                            </button>
+
+                            <div class="spiel-text">
+                                • ${convertLinks(item, section.title)}
+                            </div>
+
+                        </div>
+
+                    `).join('')}
+
+                </div>
+
+            ` : `
+
+                ${convertLinks(section.content, section.title)}
+
+            `}
+
+        </div>
+
+        ${hasContent && !isSuggestedSpiel ? `
+
+            <button class="copy-btn"
+            onclick="copyText(${section.id})">
+
+                Copy Content
+
+            </button>
+
+        ` : ''}
+
     `;
 
     results.appendChild(div);
-
 
 }
 
@@ -658,6 +742,20 @@ const cleanedContent = section.content
 
     setTimeout(()=>{
         btn.innerText = 'Copy Content';
+    },1500);
+
+}
+
+function copyBullet(btn, text){
+
+    navigator.clipboard.writeText(text);
+
+    const original = btn.innerText;
+
+    btn.innerText = 'Copied ✓';
+
+    setTimeout(()=>{
+        btn.innerText = original;
     },1500);
 
 }

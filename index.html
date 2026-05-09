@@ -367,7 +367,6 @@ body::after{
     letter-spacing:.5px;
 }
 
-
 </style>
 </head>
 
@@ -426,16 +425,21 @@ function parseSections(text){
         let subTitle = '';
         let content = '';
 
-        if(lines.length >= 3){
+if(lines.length >= 3){
 
-            subTitle = lines[1];
-            content = lines.slice(2).join('\n');
+    subTitle = lines[1];
+    content = lines.slice(2).join('\n');
 
-        }else{
+}else if(lines.length === 2){
 
-            content = lines.slice(1).join('\n');
+    subTitle = lines[1];
+    content = '';
 
-        }
+}else{
+
+    content = '';
+
+}
 
         sections.push({
 
@@ -565,9 +569,16 @@ target="_blank">
         return `|||LINK|||${url}|||ENDLINK|||`;
     });
 
-    text = text
-        .replace(/•/g,'<br>• ')
-        .replace(/\n/g,'<br>');
+text = text
+
+    // normalize large empty spaces
+    .replace(/\n{3,}/g,'\n\n')
+
+    // bullets always start on new line
+    .replace(/\s*•\s*/g,'<br>• ')
+
+    // convert line breaks
+    .replace(/\n(?!•)/g,'<br>');
 
     text = text.replace(
         /\|\|\|LINK\|\|\|(.*?)\|\|\|ENDLINK\|\|\|/g,
@@ -598,6 +609,10 @@ const cleanedContent = section.content
     .replace(/^\s+/,'')
     .trim();
 
+const hasContent =
+    section.content &&
+    section.content.trim().length > 0;
+
     div.innerHTML = `
         <div class="section-tag">CATEGORY</div>
 
@@ -613,10 +628,12 @@ const cleanedContent = section.content
     ${convertLinks(section.content, section.title)}
 </div>
 
-        <button class="copy-btn"
-        onclick="copyText(${section.id})">
-            Copy Content
-        </button>
+${hasContent ? `
+    <button class="copy-btn"
+    onclick="copyText(${section.id})">
+        Copy Content
+    </button>
+` : ''}
     `;
 
     results.appendChild(div);

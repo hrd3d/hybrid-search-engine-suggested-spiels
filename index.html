@@ -292,6 +292,65 @@ body::after{
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
+.faq-table-wrap{
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+.faq-table{
+    width:100%;
+    border-collapse:collapse;
+    border-radius:16px;
+    overflow:hidden;
+    background:rgba(255,255,255,.03);
+
+    table-layout:fixed;
+}
+
+.faq-table th{
+    background:rgba(0,255,208,.12);
+    color:#00ffd0;
+    text-align:left;
+    padding:14px;
+    font-size:14px;
+}
+
+.faq-table td{
+    padding:14px;
+    border-top:1px solid rgba(255,255,255,.05);
+    font-size:14px;
+    color:#d8dee9;
+}
+
+.faq-table tr:hover{
+    background:rgba(255,255,255,.03);
+}
+
+.faq-table td{
+    vertical-align:middle;
+}
+
+.faq-link-cell{
+    width:38%;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    line-height:1.5;
+}
+
+.faq-label{
+    width:62%;
+}
+
+.sub-category{
+    color:#8fa3b8;
+    font-size:13px;
+    margin-top:-10px;
+    margin-bottom:18px;
+    font-weight:500;
+    letter-spacing:.5px;
+}
+
+
 </style>
 </head>
 
@@ -340,17 +399,45 @@ function parseSections(text){
 
     blocks.forEach((block,index)=>{
 
-        const lines = block.split('\n').filter(x=>x.trim());
+        const lines = block
+            .split('\n')
+            .map(x=>x.trim())
+            .filter(x=>x);
 
-        let title = lines[0] || `Category ${index+1}`;
+        const title = lines[0] || `Category ${index+1}`;
 
-        let content = lines.slice(1).join('\n');
+        let subTitle = '';
+        let content = '';
+
+        if(lines.length >= 3){
+
+            subTitle = lines[1];
+            content = lines.slice(2).join('\n');
+
+        }else{
+
+            content = lines.slice(1).join('\n');
+
+        }
 
         sections.push({
+
             id:index,
+
             title,
-            content:block,
-            search:(title + ' ' + block).toLowerCase()
+
+            subTitle,
+
+            content,
+
+            raw:block,
+
+            search:(
+                title + ' ' +
+                subTitle + ' ' +
+                content
+            ).toLowerCase()
+
         });
 
     });
@@ -372,7 +459,88 @@ function renderAll(){
 
 }
 
-function convertLinks(text){
+function convertLinks(text, title=''){
+
+    const lines = text
+        .split('\n')
+        .map(x=>x.trim())
+        .filter(x=>x);
+
+    const faqLines = lines.filter(line =>
+        line.includes('http')
+    );
+
+    if(
+        title.toUpperCase().includes('FAQ LINKS')
+        && faqLines.length >= 3
+    ){
+
+        let tableRows = '';
+
+        faqLines.forEach(line=>{
+
+            const match = line.match(/(https?:\/\/[^\s]+)/);
+
+            if(match){
+
+                const url = match[0];
+
+                const label = line
+                    .replace(url,'')
+                    .trim();
+
+                tableRows += `
+                    <tr>
+
+                        <td class="faq-label">
+                            ${label}
+                        </td>
+
+                        <td class="faq-link-cell">
+
+<a class="link"
+href="${url}"
+target="_blank">
+
+    ${url}
+
+</a>
+
+                        </td>
+
+                    </tr>
+                `;
+            }
+
+        });
+
+        return `
+
+            <div class="faq-table-wrap">
+
+                <table class="faq-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${tableRows}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        `;
+    }
 
     const urlRegex = /(https?:\/\/[^\s]+)/g;
 
@@ -387,13 +555,20 @@ function convertLinks(text){
     text = text.replace(
         /\|\|\|LINK\|\|\|(.*?)\|\|\|ENDLINK\|\|\|/g,
         (match,url)=>{
-            return `<a class="link" href="${url}" target="_blank">${url}</a>`;
+            return `
+                <a class="link"
+                href="${url}"
+                target="_blank">
+
+                ${url}
+
+                </a>
+            `;
         }
     );
 
     return text;
 }
-
 function renderCard(section){
 
     const div = document.createElement('div');
@@ -409,13 +584,17 @@ const cleanedContent = section.content
     div.innerHTML = `
         <div class="section-tag">CATEGORY</div>
 
-        <div class="category-title">
-            ${section.title}
-        </div>
+<div class="category-title">
+    ${section.title}
+</div>
 
-        <div class="content">
-            ${convertLinks(cleanedContent)}
-        </div>
+<div class="sub-category">
+    ${section.subTitle || ''}
+</div>
+
+<div class="content">
+    ${convertLinks(section.content, section.title)}
+</div>
 
         <button class="copy-btn"
         onclick="copyText(${section.id})">
@@ -424,6 +603,7 @@ const cleanedContent = section.content
     `;
 
     results.appendChild(div);
+
 
 }
 

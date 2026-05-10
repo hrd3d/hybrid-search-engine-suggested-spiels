@@ -240,6 +240,83 @@ EXPEDITE (eligible)
 •Alam ko po gaano ka importante na ma edeliver ito sa inyo agad and you invested much time and effort po para ma deliver ito. Na appreciate po namin ang lahat ng oras at effort ninyo at humihingi po kami ng pasensya sa abala.Makakaasa po kayo na I raised follow up report para ma urge po ang delivery today. 
 •Humihingi po ako sa inyo ng chance today na mag reachout po ulit sa ating assigned team para possible ba maipadeliver po ito today.	
 
+EXPEDITE (not eligible)
+*Suggested spiel:
+•I completely understand po yung urgency ninyo na ma-deliver agad ang order, lalo na if kailangan na talaga siya.
+*Root cause suggested spiel:
+•Upon checking, as of DATE your order STATUS and I can see, the estimated delivery date is #{EDD Max(Estimated delivery time)}. 
+•Rest assured po, we are doing our best to deliver on or before the estimated delivery date.We kindly ask you to keep your lines open, as the rider may contact you for a smoother delivery experience. 
+•Sa ngayon, hindi pa po namin ma-process ang expedite request dahil pasok pa ito sa estimated delivery date. Rest assured po na ginagawa namin ang lahat ng makakaya namin para ma-deliver ang inyong order on or before the estimated delivery date.
+•Maraming salamat po sa inyong patience and understanding.
+*Rapport suggested spiel:
+•May ganito rin po akong experience before pero na-receive ko naman po within the estimated delivery date. Alam niyo po, dati akala ko matagal pa ma-deliver ang order ko kasi matagal pa ang updated estimated delivery date and I badly need the item. Pero na-deliver po sa akin before the estimated delivery date.
+•Thank you for your patience and kindness po despite of what happened. I know this is not the solution yet, but I am hoping that we made you feel that we did our best to help. Alam niyo po, isa kayo sa mga mababait naming customer today.
+•I'm a buyer myself po like you and my goal today is to help you and provide solution po the best as I can.
+*Solution SPX courier suggested spiel: 
+•You can track your shipment directly on the SPX tracking website: https://spx.ph/en using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+*Solution FLASH courier suggested spiel: 
+•You can track your shipment directly on the Flash Express tracking website: https://www.flashexpress.ph/fle/tracking/ using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+*Solution YTO courier suggested spiel: 
+•You can track your shipment directly on the YTO Express tracking website: https://www.ytoexpress.ph using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+
+FF EXISTING EXPEDITE
+*Suggested spiel:
+•I completely understand po yung urgency ninyo na ma-deliver agad ang order, lalo na if kailangan na talaga siya. 
+*Root cause suggested spiel:
+•Upon checking, as of DATE your order STATUS and I can see, the estimated delivery date is #{EDD Max(Estimated delivery time)}. 
+*SPX courier (if the assignee is correct) suggested spiel:
+•Upon checking, may existing expedite po. Please allow me to clarify that while a previous expedite request was filed with the initial sorting center. And right now, it was assigned to the current sorting center where your parcel is routed. This is to ensure your order is prioritized and moved forward as soon as possible. 
+•Gagawa po ako ng bagong expedite request sa current location ng parcel ninyo para ma-notify ang team roon at masigurong ma-prioritize ang delivery nito. Ginagawa po namin ito para mas mabilis po itong ma-move forward at makarating sa inyo sa lalong madaling panahon.
+•Rest assured po, tuloy-tuloy po naming kino-coordinate ang courier para masiguro na may actual movement po ang parcel ninyo.
+*Rapport suggested spiel:
+•No worries po, I will submit a follow-up report and have your order flagged para ma-notify ang courier at ma-deliver agad sa inyo.  
+•Alam ko po gaano ka importante na ma edeliver ito sa inyo agad and you invested much time and effort po para ma deliver ito. Na appreciate po namin ang lahat ng oras at effort ninyo at humihingi po kami ng pasensya sa abala.Makakaasa po kayo na I raised follow up report para ma urge po ang delivery today. 
+•Rest assured po, na-report na ang expedite delivery request niyo at kami na po ang bahala sa follow-up. Talaga po naming kino-coordinate at kinukulit ang courier para masigurado na makarating agad at maayos ang delivery ng parcel niyo. ❤️ 
+•Rest assured, we are doing our best to deliver your order as soon as possible. Please note that it is just the timeframe po. May ganyan din po akong experience at within the timeframe ay na-receive ko na after ma-expedite.
+•Since may existing expedite ticket na po itong order natin, I'll ask additional help po sa immediate head ko to help me follow up sa assigned team para po magkaroon ng update and we hope po na magkaroon na rin ng update within the day. 
+•You can count on me po 😊 Since I’m also a buyer, I truly understand how important this parcel is for you. 
+•Naiintindihan ko po kayo, lalo na kung ilang beses na po kayong nakausap ng agent tapos pare-pareho lang yung sinasabi pero wala pa ring nangyayari. Hindi ko po kayo masisisi kung nagdududa na kayo ngayon, valid po talaga yung nararamdaman ninyo. Ayoko rin po kayong bigyan ng paulit-ulit na assurance lang na “priority” kung wala namang actual na movement.
+•Pasensya na po talaga sa nangyari. Naiintindihan ko rin po kung bakit parang mahirap na maniwala agad kahit sabihin na naka-priority na, lalo na kung ilang beses na pong na-delay. Pero I cana ssure you, this time, naka-prirotize na po ito.
+•It’s never our intention to leave you feeling this disappointed po and this chance lang po talaga ang hihingin ko  with the help of our assigned team  so we can fix this po.	
+•I'm a  buyer myself po like you and my Goal today is to help you and provide solution po the best as I can with the help of our assign team.
+•Gusto ko pong i-assure sa inyo na mino-monitor na po namin ito closely, and we are coordinating with the courier to prioritize the movement and delivery of your parcel.
+•While we work on this, we kindly ask po na i-keep open ang inyong lines, as the rider may contact you once the parcel is out for delivery.
+Rest assured po na ginagawa namin ang lahat ng makakaya namin to help expedite the process and ensure that your order reaches you as soon as possible. Maraming salamat po sa inyong patience and understanding.
+
+STUCK 3 DAYS OR MORE
+*Suggested spiel: 
+•I completely understand po yung urgency ninyo na ma-deliver agad ang order, lalo na if kailangan na talaga siya. I understand that your parcel has had no movement for several days. I apologize for the inconvenience.
+*Root cahse suggested spiel:
+•Upon checking, as of DATE your order STATUS and I can see, the estimated delivery date is #{EDD Max(Estimated delivery time)}. 
+*Rapport suggested spiel:
+•Gusto ko pong i-assure sa inyo na mino-monitor na po namin ito closely, and we are coordinating with the courier to prioritize the movement and delivery of your parcel.
+•You have our full assurance po na we urge the assigned courier para po they will notify the assigned branch na bilisan ang movement sa parcel po ninyo. They are now working on speeding up the delivery, lalo na’t aware sila na urgently needed na po ito. 
+•Gusto ko rin pong i-assure na ang buyer protection at positive experience ay aming top priority, at sisiguraduhin po naming maayos ang sitwasyon at maiwasan na maulit pa ito. Your experience is very important to us, and feedback like this helps us improve the service we provide 🙏
+•Rest assured po, na-report na ang expedite delivery request niyo at kami na po ang bahala sa follow-up. Talaga po naming kino-coordinate at kinukulit ang courier para masigurado na makarating agad at maayos ang delivery ng parcel niyo. ❤️ 
+•While we work on this, we kindly ask po na i-keep open ang inyong lines, as the rider may contact you once the parcel is out for delivery.
+•Rest assured po na ginagawa namin ang lahat ng makakaya namin to help expedite the process and ensure that your order reaches you as soon as possible. Maraming salamat po sa inyong patience and understanding.
+•Gusto ko rin pong i-assure na ang buyer protection at positive experience ay aming top priority, at sisiguraduhin po naming maayos ang sitwasyon at maiwasan na maulit pa ito. Your experience is very important to us, and feedback like this helps us improve the service we provide 🙏
+•Buyer din po ako kaya ang goal ko today is to truly help you and provide the best possible solution. Gagawin ko po ang lahat ng kaya ko, kasama ang assigned team, para ma-resolve ito for you as we really understand the urgency na needed na po ito.
+•Alam ko po na kailangan ninyo ang parcel on time. I will make sure po na ma-raise ito sa courier para ma-remind sila at ma-prioritize ang delivery ng parcel ninyo. Lalo po naming kinukulit ang assigned courier para po madeliver ito agad sa inyo. 
+•We really appreciate the time and effort you have spend po para ma resolve ito. kami na po ang bahala sa report to make a follow up to notify the assigned courier for urgency and prompt movement of the delivery sa parcel po ninyo. 
+•Alam po namin na hindi biro ang inyong paghihintay sa parcel at we really appreciate it po dahil sobrang mahalaga po ito sa niyo. We reported this and flagged this for urgency para ma priority at mapabilis ang delivery sa lalong madaling panahon. 
+
+SAME DAY/URGENT
+*Suggested spiel:
+•I understand po how important itong delivery sa inyo, lalo na at kailangan ninyo ito as soon as possible.
+*Eligible for expedite delivery - suggested spiel
+•While I cannot guarantee same-day delivery due to routing and operational limitations, I want to assure you that your order is now being prioritized.
+•Please note that while we cannot guarantee the exact delivery date or same-day delivery, rest assured that your order has been flagged as prioritized and is being actively monitored to ensure it moves forward as quickly as possible.
+•While we cannot guarantee na ma-deliver ito today, rest assured, it is now being prioritzed. I can assure you, we are doing our best to deliver your order as soon as possible.
+•I'm a buyer myself po like you and my goal today is to help you and provide solution po the best as I can with the help of our assign team.	
+•Alam ko po na kailangan ninyo ang parcel on time. I will make sure po na ma-raise ito sa courier para ma-remind sila at ma-prioritize ang delivery ng parcel ninyo. Lalo po naming kinukulit ang assigned courier para po madeliver ito agad sa inyo. 
+•Minsan po sa akin bilang buyer, akala ko matatagalan ang delivery ng order ko, pero sa surprise ko, dumating po ito kinahaponan. Sana po ganun din ang mangyari sa order ninyo, rest assured nakapriority na po ito ngayon.
+•Na-appreciate po namin ang lahat ng effort at oras na inilaan ninyo sa pag-chat sa amin para ma-resolve ito. Hindi po namin sasayangin ang lahat.
+•Gusto ko pong i-assure sa inyo na mino-monitor na po namin ito closely, and we are coordinating with the courier to prioritize the movement and delivery of your parcel.
+•Alam ko po na kailangan ninyo ang parcel on time. I will make sure po na ma-raise ito sa courier para ma-remind sila at ma-prioritize ang delivery ng parcel ninyo. Lalo po naming kinukulit ang assigned courier para po madeliver ito agad sa inyo. 
+•We really appreciate the time and effort you have spend po para ma resolve ito. kami na po ang bahala sa report to make a follow up to notify the assigned courier for urgency and prompt movement of the delivery sa parcel po ninyo. 
+•Alam po namin na hindi biro ang inyong paghihintay sa parcel at we really appreciate it po dahil sobrang mahalaga po ito sa niyo. We reported this and flagged this for urgency para ma priority at mapabilis ang delivery sa lalong madaling panahon. 
+
 
 
 

@@ -615,15 +615,15 @@ function convertLinks(text, title=''){
 
         faqLines.forEach(line=>{
 
-            const match = line.match(/(https?:\/\/[^\s]+)/);
+            const match = line.match(/\(?\s*(https?:\/\/[^\s\)]+)\s*\)?/);
 
             if(match){
 
                 const url = match[0];
 
-                const label = line
-                    .replace(url,'')
-                    .trim();
+const label = line
+    .replace(/\(?\s*https?:\/\/[^\s\)]+\s*\)?/,'')
+    .trim();
 
                 tableRows += `
                     <tr>

@@ -200,6 +200,11 @@ body::after{
     padding-top:0;
 }
 
+.content-block{
+    margin-bottom:12px;
+    line-height:1.7;
+}
+
 .copy-btn{
     margin-top:25px;
     border:none;
@@ -361,16 +366,20 @@ body::after{
 .sub-category{
     color:#8fa3b8;
     font-size:13px;
-    margin-top:-10px;
-    margin-bottom:18px;
-    font-weight:500;
-    letter-spacing:.5px;
+    margin-top:18px;
+    margin-bottom:10px;
+    font-weight:600;
+    letter-spacing:.4px;
 }
 
 .spiel-list{
     display:flex;
     flex-direction:column;
     gap:12px;
+}
+
+.spiel-list{
+    margin-bottom:14px;
 }
 
 .spiel-item{
@@ -419,7 +428,8 @@ body::after{
 
     <div class="header">
         <h1>SupportZebra X Shopee Philippines</h1>
-        <p>Guides, Links and Suggested Spiels</p>
+        <p>Guides, Links and Suggested Spiels by MICHELLE TAPARAN</p>
+        <p>BUYER LOGISTICS and RETURN/REFUND</p>
     </div>
 
     <div class="search-grid">
@@ -451,8 +461,8 @@ function parseSections(text){
 
     const blocks = text
         .split(/\n\s*\n/)
-        .map(x => x.trim())
-        .filter(x => x.length > 0);
+        .map(x=>x.trim())
+        .filter(x=>x.length > 0);
 
     blocks.forEach((block,index)=>{
 
@@ -463,41 +473,105 @@ function parseSections(text){
 
         const title = lines[0] || `Category ${index+1}`;
 
-        let subTitle = '';
-        let content = '';
+        const subSections = [];
 
-if(lines.length >= 3){
+        let currentSub = null;
 
-    subTitle = lines[1];
-    content = lines.slice(2).join('\n');
+        for(let i=1;i<lines.length;i++){
 
-}else if(lines.length === 2){
+            const line = lines[i];
 
-    subTitle = lines[1];
-    content = '';
+const isSubCategory =
+
+    line.startsWith('*')
+
+    ||
+
+    line.toLowerCase().includes('suggested spiel:')
+
+    ||
+
+    line.toLowerCase().includes('guide:')
+
+    ||
+
+    line.toLowerCase().includes('faq links')
+
+    ||
+
+    line.toLowerCase().includes('for expedite')
+
+    ||
+
+    line.toLowerCase().includes('task creation')
+
+    ||
+
+    line.toLowerCase().includes('run macro:')
+
+    ||
+
+    line.toLowerCase().includes('cx ask')
+
+    ||
+
+    line.toLowerCase().includes('how to')
+
+    ||
+
+    line.toLowerCase().includes('request to');
+
+if(isSubCategory){
+
+    if(currentSub){
+        subSections.push(currentSub);
+    }
+
+    currentSub = {
+
+        title:line.replace('*','').trim(),
+
+        content:[]
+
+    };
 
 }else{
 
-    content = '';
+    // auto-create default subsection
+    // for old knowledge.js format
+    if(!currentSub){
+
+        currentSub = {
+
+            title:'Information',
+
+            content:[]
+
+        };
+
+    }
+
+    currentSub.content.push(line);
 
 }
+}
+       
+
+
+
+        if(currentSub){
+            subSections.push(currentSub);
+        }
 
         sections.push({
 
             id:index,
-
             title,
-
-            subTitle,
-
-            content,
-
-            raw:block,
+            subSections,
 
             search:(
                 title + ' ' +
-                subTitle + ' ' +
-                content
+                JSON.stringify(subSections)
             ).toLowerCase()
 
         });
@@ -646,20 +720,6 @@ function renderCard(section){
     div.className = 'card';
     div.id = 'section-' + section.id;
 
-    const hasContent =
-        section.content &&
-        section.content.trim().length > 0;
-
-    const isSuggestedSpiel =
-        section.subTitle &&
-        section.subTitle.toLowerCase()
-        .includes('suggested spiel');
-
-    const bulletItems = section.content
-        .split('•')
-        .map(x=>x.trim())
-        .filter(x=>x);
-
     div.innerHTML = `
 
         <div class="section-tag">CATEGORY</div>
@@ -668,62 +728,84 @@ function renderCard(section){
             ${section.title}
         </div>
 
-        <div class="sub-category">
-            ${section.subTitle || ''}
-        </div>
-
         <div class="content">
 
-            ${isSuggestedSpiel ? `
+            ${section.subSections.map(sub=>{
 
-                <div class="spiel-list">
+const isSuggestedSpiel =
+    /suggested\s*spiel/i.test(sub.title);
 
-                    ${bulletItems.map(item=>`
+const bulletItems = sub.content
+    .join('\n')
 
-                        <div class="spiel-item">
+    // normalize bullets
+    .replace(/[••●▪◦]/g,'|||BULLET|||')
 
-                            <button
-                            class="mini-copy-btn"
-                            onclick="copyBullet(this, \`${item.replace(/`/g,'\\`')}\`)">
+    .split('|||BULLET|||')
 
-                                Copy
+    .map(x=>x.trim())
 
-                            </button>
+    .filter(x=>x);
 
-                            <div class="spiel-text">
-                                • ${convertLinks(item, section.title)}
-                            </div>
+                return `
+
+                    <div class="sub-category">
+
+                        ${sub.title}
+
+                    </div>
+
+                    ${isSuggestedSpiel && bulletItems.length ? `
+
+                        <div class="spiel-list">
+
+                            ${bulletItems.map(item=>`
+
+                                <div class="spiel-item">
+
+                                    <button
+                                    class="mini-copy-btn"
+                                    onclick="copyBullet(this, \`${item.replace(/`/g,'\\`')}\`)">
+
+                                        Copy
+
+                                    </button>
+
+                                    <div class="spiel-text">
+                                        • ${convertLinks(item, section.title)}
+                                    </div>
+
+                                </div>
+
+                            `).join('')}
 
                         </div>
 
-                    `).join('')}
+                    ` : `
 
-                </div>
+                        <div class="content-block">
 
-            ` : `
+                            ${convertLinks(
+                                sub.content.join('\n'),
+                                section.title
+                            )}
 
-                ${convertLinks(section.content, section.title)}
+                        </div>
 
-            `}
+                    `}
+
+                `;
+
+            }).join('')}
 
         </div>
-
-        ${hasContent && !isSuggestedSpiel ? `
-
-            <button class="copy-btn"
-            onclick="copyText(${section.id})">
-
-                Copy Content
-
-            </button>
-
-        ` : ''}
 
     `;
 
     results.appendChild(div);
 
 }
+
 
 function copyText(id){
 
@@ -779,7 +861,13 @@ function renderDropdown(){
     let matched = sections.filter(section=>{
 
         if(type === 'category'){
-            return section.title.toLowerCase().includes(value);
+            return (
+    section.title.toLowerCase().includes(value)
+    ||
+    section.subSections.some(sub =>
+        sub.title.toLowerCase().includes(value)
+    )
+);
         }else{
             return section.search.includes(value);
         }

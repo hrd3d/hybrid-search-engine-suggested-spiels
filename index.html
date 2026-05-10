@@ -417,6 +417,23 @@ body::after{
     line-height:1.7;
 }
 
+.search-highlight{
+    background:#ffe066;
+    color:#000 !important;
+
+    padding:2px 6px;
+
+    border-radius:6px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 0 10px rgba(255,224,102,.65);
+
+    display:inline-block;
+}
+
+
 </style>
 </head>
 
@@ -751,7 +768,7 @@ const bulletItems = sub.content
 
                     <div class="sub-category">
 
-                        ${sub.title}
+                        ${highlightText(sub.title)}
 
                     </div>
 
@@ -772,7 +789,9 @@ const bulletItems = sub.content
                                     </button>
 
                                     <div class="spiel-text">
-                                        • ${convertLinks(item, section.title)}
+                                        • ${highlightText(
+    convertLinks(item, section.title)
+)}
                                     </div>
 
                                 </div>
@@ -785,10 +804,12 @@ const bulletItems = sub.content
 
                         <div class="content-block">
 
-                            ${convertLinks(
-                                sub.content.join('\n'),
-                                section.title
-                            )}
+${highlightText(
+    convertLinks(
+        sub.content.join('\n'),
+        section.title
+    )
+)}
 
                         </div>
 
@@ -885,9 +906,66 @@ function renderDropdown(){
 
         item.className = 'dropdown-item';
 
-        item.innerHTML = `
-            <strong>${section.title}</strong>
-        `;
+const regex = new RegExp(
+    `(${value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`,
+    'ig'
+);
+
+let displayText = section.title;
+
+if(type === 'keyword'){
+
+    const matchedSub = section.subSections.find(sub=>
+
+        sub.content
+        .join(' ')
+        .toLowerCase()
+        .includes(value)
+
+    );
+
+    if(matchedSub){
+
+        const combinedText = matchedSub.content.join(' ');
+
+        const index = combinedText
+            .toLowerCase()
+            .indexOf(value);
+
+        if(index >= 0){
+
+            const snippet = combinedText.substring(
+                Math.max(0,index - 30),
+                index + value.length + 50
+            );
+
+            displayText = `
+                ${highlightText(section.title)}
+                <div style="
+                    margin-top:6px;
+                    font-size:12px;
+                    color:#9aa4b2;
+                    line-height:1.5;
+                ">
+                    ...${snippet.replace(
+                        regex,
+                        '<span class="search-highlight">$1</span>'
+                    )}...
+                </div>
+            `;
+        }
+    }
+
+}else{
+
+    displayText = section.title.replace(
+        regex,
+        '<span class="search-highlight">$1</span>'
+    );
+
+}
+
+item.innerHTML = displayText;
 
         item.onclick = ()=>{
 
@@ -918,7 +996,13 @@ function renderDropdown(){
 
 }
 
-input.addEventListener('input', renderDropdown);
+input.addEventListener('input',()=>{
+
+    renderDropdown();
+
+    renderAll();
+
+});
 
 input.addEventListener('focus',()=>{
 
@@ -952,6 +1036,35 @@ setupSearch(
     'keywordDropdown',
     'keyword'
 );
+
+function highlightText(text){
+
+const keywordInput =
+    document.activeElement?.id === 'categorySearch'
+
+    ? document.getElementById('categorySearch')
+
+    : document.getElementById('keywordSearch');
+
+    if(!keywordInput) return text;
+
+    const keyword = keywordInput.value.trim();
+
+    if(keyword.length < 3) return text;
+
+    const escaped = keyword.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        '\\$&'
+    );
+
+    const regex = new RegExp(`(${escaped})`,'ig');
+
+    return text.replace(
+        regex,
+        '<span class="search-highlight">$1</span>'
+    );
+
+}
 
 renderAll();
 

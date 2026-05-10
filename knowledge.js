@@ -196,7 +196,7 @@ Internet Call (VOIP) is available to selected users. This option can be seen via
 FAQ LINKS 
 FAQ Links
 Cancel an order (https://help.shopee.ph/portal/article/81180)
-Cancel Request R/R (https://help.shopee.ph/portal/article/81338)
+Cancel request R/R (https://help.shopee.ph/portal/article/81338)
 Change delivery details (https://help.shopee.ph/portal/article/81134)
 Check order status (https://seller.shopee.ph/edu/article/3732)
 Check RR status (https://help.shopee.ph/portal/article/83687)
@@ -316,6 +316,15 @@ SAME DAY/URGENT
 •Alam ko po na kailangan ninyo ang parcel on time. I will make sure po na ma-raise ito sa courier para ma-remind sila at ma-prioritize ang delivery ng parcel ninyo. Lalo po naming kinukulit ang assigned courier para po madeliver ito agad sa inyo. 
 •We really appreciate the time and effort you have spend po para ma resolve ito. kami na po ang bahala sa report to make a follow up to notify the assigned courier for urgency and prompt movement of the delivery sa parcel po ninyo. 
 •Alam po namin na hindi biro ang inyong paghihintay sa parcel at we really appreciate it po dahil sobrang mahalaga po ito sa niyo. We reported this and flagged this for urgency para ma priority at mapabilis ang delivery sa lalong madaling panahon. 
+*Not eligible for expedite delivery (at LM Hub already) - suggested spiel
+•At this time, possible po na ma-out for delivery ito later today since nasa delivery hub na po ang parcel and awaiting dispatch. May cases po talaga na hindi agad nag-uupdate pero naideliver din within the same day.
+•May similar experience din po ako before, akala ko delayed na yung order ko kasi hindi pa siya nag-o-out for delivery, pero nareceive ko din po siya later that day. Sana po ganun din ang mangyari sa order ninyo.
+•Rest assured po, we are monitoring this closely and will continue to coordinate with the courier for any updates on the movement of your parcel.
+
+
+
+
+
 
 
 

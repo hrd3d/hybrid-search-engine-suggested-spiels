@@ -195,23 +195,22 @@ Internet Call (VOIP) is available to selected users. This option can be seen via
 
 FAQ LINKS 
 FAQ Links
-Cancel an order https://help.shopee.ph/portal/article/81180
-Cancel Request R/R https://help.shopee.ph/portal/article/81338
-Change delivery details https://help.shopee.ph/portal/article/81134
-Check RR status https://help.shopee.ph/portal/article/83687
-Delivered but not received https://help.shopee.ph/portal/article/106841
-Dispute status https://help.shopee.ph/portal/article/81286
-Failed/Incomplete pick up https://seller.shopee.ph/edu/article/3729
-How to check order status https://seller.shopee.ph/edu/article/3732
-Order was canceled https://help.shopee.ph/portal/article/104737
-Proof of delivery https://help.shopee.ph/portal/article/81287
-Refund for canceled order https://help.shopee.ph/portal/article/86983
-Return parcel Shipping https://help.shopee.ph/portal/article/126380
-Request R/R https://help.shopee.ph/portal/4/article/81231
-Refund Shipping Fee https://help.shopee.ph/portal/article/81321
+Cancel an order (https://help.shopee.ph/portal/article/81180)
+Cancel Request R/R (https://help.shopee.ph/portal/article/81338)
+Change delivery details (https://help.shopee.ph/portal/article/81134)
+Check order status (https://seller.shopee.ph/edu/article/3732)
+Check RR status (https://help.shopee.ph/portal/article/83687)
+Delivered but not received (https://help.shopee.ph/portal/article/106841)
+Dispute status (https://help.shopee.ph/portal/article/81286)
+Failed/Incomplete pick up (https://seller.shopee.ph/edu/article/3729)
+Order was canceled (https://help.shopee.ph/portal/article/104737)
+Proof of delivery (https://help.shopee.ph/portal/article/81287)
+Refund for canceled order (https://help.shopee.ph/portal/article/86983)
+Return parcel Shipping (https://help.shopee.ph/portal/article/126380)
+Request R/R (https://help.shopee.ph/portal/4/article/81231)
+Refund Shipping Fee (https://help.shopee.ph/portal/article/81321)
 
 EXPEDITE (eligible)
-
 *Suggested spiel: 
 •I completely understand po yung urgency ninyo na ma-deliver agad ang order, lalo na if kailangan na talaga siya.
 *Root cause suggested spiel: 

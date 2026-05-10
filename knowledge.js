@@ -77,17 +77,11 @@ MULTIPLE XFER
 Suggested spiel:
 Pasensya na po if you have been transferred multiple times already. Para matulungan namin kayo, let me connect you to my supervisor for additional support. Please stay on the line and thank you for your patience po. 
 
-CASE ID SUGGESTED SPIEL #1
+CASE ID SUGGESTED SPIEL
 Suggested spiel:
-Ito po ang ating reference number #{Case ID} para po sa concern today. This will serve as your case ID if you would want to make a follow up, makikita po ng next agent lahat ng pinag-usapan natin maging sa mga previous agent na nakausap niyo sa case ID na ito.  
-
-CASE ID SUGGESTED SPIEL #2
-Suggested spiel:
-Naiintindihan ko po ang concern ninyo tungkol sa escalation reference. Please allow me to clarify po na sa Shopee system, wala po pong hiwalay na reference number para sa escalation. Ang case ID/reference number po natin #{Case ID}ang parehong ginagamit bilang reference para sa conversation at sa escalation.
-
-CASE ID SUGGESTED SPIEL #3
-Suggested spiel:
-Makikita po lahat ng pinag-usapan natin dito sa case thread, pati na rin ang mga follow-up at escalation na ginawa, kaya maaari niyo pong gamitin ang case ID na ito sa susunod na follow-up para makita ng next agent ang buong history ng concern niyo.
+•Ito po ang ating reference number #{Case ID} para po sa concern today. This will serve as your case ID if you would want to make a follow up, makikita po ng next agent lahat ng pinag-usapan natin maging sa mga previous agent na nakausap niyo sa case ID na ito.  
+•Naiintindihan ko po ang concern ninyo tungkol sa escalation reference. Please allow me to clarify po na sa Shopee system, wala po pong hiwalay na reference number para sa escalation. Ang case ID/reference number po natin #{Case ID}ang parehong ginagamit bilang reference para sa conversation at sa escalation.
+•Makikita po lahat ng pinag-usapan natin dito sa case thread, pati na rin ang mga follow-up at escalation na ginawa, kaya maaari niyo pong gamitin ang case ID na ito sa susunod na follow-up para makita ng next agent ang buong history ng concern niyo.
 
 FALSE INFO BY PREV AGENTS
 Suggested spiel:
@@ -216,13 +210,36 @@ Return parcel Shipping https://help.shopee.ph/portal/article/126380
 Request R/R https://help.shopee.ph/portal/4/article/81231
 Refund Shipping Fee https://help.shopee.ph/portal/article/81321
 
+EXPEDITE (eligible)
 
-
-
-
-
-
-
+*Suggested spiel: 
+•I completely understand po yung urgency ninyo na ma-deliver agad ang order, lalo na if kailangan na talaga siya.
+*Root cause suggested spiel: 
+•Upon checking, as of DATE your order STATUS and I can see, the estimated delivery date is #{EDD Max(Estimated delivery time)}.
+*Rapport suggested spiel:
+•I'm a buyer myself po like you and my goal today is to help you and provide solution po the best as I can with the help of our assign team.	
+•Alam ko po na kailangan ninyo ang parcel on time. I will make sure po na ma-raise ito sa courier para ma-remind sila at ma-prioritize ang delivery ng parcel ninyo. Lalo po naming kinukulit ang assigned courier para po madeliver ito agad sa inyo. 
+•Gusto ko rin pong i-assure na ang buyer protection at positive experience ay aming top priority, at sisiguraduhin po naming maayos ang sitwasyon at maiwasan na maulit pa ito. Your experience is very important to us, and feedback like this helps us improve the service we provide 🙏
+•You can count on me po 😊 Since I’m also a buyer, I truly understand how important this parcel is for you. 
+•Rest assured po, na-report na ang expedite delivery request niyo at kami na po ang bahala sa follow-up. Talaga po naming kino-coordinate at kinukulit ang courier para masigurado na makarating agad at maayos ang delivery ng parcel niyo. ❤️ 
+•Minsan po sa akin bilang buyer, akala ko matatagalan ang delivery ng order ko, pero sa surprise ko, dumating po ito kinahaponan. Sana po ganun din ang mangyari sa order ninyo, rest assured nakapriority na po ito ngayon.
+•Na-appreciate po namin ang lahat ng effort at oras na inilaan ninyo sa pag-chat sa amin para ma-resolve ito. Hindi po namin sasayangin ang lahat.
+•Gusto ko pong i-assure sa inyo na mino-monitor na po namin ito closely, and we are coordinating with the courier to prioritize the movement and delivery of your parcel.
+•Alam po namin na hindi biro ang inyong paghihintay sa parcel at we really appreciate it po dahil sobrang mahalaga po ito sa niyo. We reported this and flagged this for urgency para ma priority at mapabilis ang delivery sa lalong madaling panahon. 
+•Thank you for your patience and kindness po despite of what happened. I know this is not the solution yet, but I am hoping that we made you feel that we did our best to help. Alam niyo po, isa kayo sa mga mababait naming customer today.
+*Solution SPX courier suggested Spiel:
+•It’s never our intention to leave you feeling this disappointed po and this chance lang po talaga ang hihingin ko  with the help of our assigned team  so we can fix this po.Kindly anticipate within 24-48 hours po for an update.
+*Solution Other 3PL Courier Suggested Spiel: 
+•It’s never our intention to leave you feeling this disappointed po and this chance lang po talaga ang hihingin ko  with the help of our assigned team  so we can fix this po.Kindly anticipate within 24-72 hours po for an update.
+*Within EDD solution to provide the tracking - Solution SPX courier suggested spiel: 
+•You can track your shipment directly on the SPX tracking website: https://spx.ph/en using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+*Within EDD solution to provide the tracking - Solution FLASH courier suggested spiel: 
+•You can track your shipment directly on the Flash Express tracking website: https://www.flashexpress.ph/fle/tracking/ using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+*Within EDD solution to provide the tracking - Solution YTO courier suggested spiel: 
+•You can track your shipment directly on the YTO Express tracking website: https://www.ytoexpress.ph using your tracking number: _________. For more details on tracking your orders within the app, please refer to this helpful guide https://help.shopee.ph/portal/4/article/80997.
+*More than 24 hours at last mile hub suggested spiel:
+•Alam ko po gaano ka importante na ma edeliver ito sa inyo agad and you invested much time and effort po para ma deliver ito. Na appreciate po namin ang lahat ng oras at effort ninyo at humihingi po kami ng pasensya sa abala.Makakaasa po kayo na I raised follow up report para ma urge po ang delivery today. 
+•Humihingi po ako sa inyo ng chance today na mag reachout po ulit sa ating assigned team para possible ba maipadeliver po ito today.	
 
 
 
